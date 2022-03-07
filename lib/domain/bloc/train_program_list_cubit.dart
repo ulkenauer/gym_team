@@ -10,7 +10,7 @@ class TrainProgramListCubit extends Cubit<TrainProgramListState> {
     required this.repository,
   }) : super(initialState);
 
-  void loadList() async {
+  Future<void> loadList() async {
     if (state.isLoading) {
       return;
     }
@@ -30,6 +30,7 @@ class TrainProgramListCubit extends Cubit<TrainProgramListState> {
     } catch (err) {
       emit((TrainProgramListStateBuilder.fromInstance(state)
             ..isLoading = false
+            ..trainProgramsList = null
             ..displayError = 'Что-то пошло не так')
           .build());
     }
