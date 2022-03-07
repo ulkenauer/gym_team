@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,7 +13,15 @@ import 'package:gym_team/domain/bloc/train_program_list_state.dart';
 late final NetworkTrainProgramsRepository trainProgramsRepository;
 
 void configureServices() {
-  trainProgramsRepository = NetworkTrainProgramsRepository();
+  final dio = Dio(
+    BaseOptions(
+      connectTimeout: 15000,
+      receiveTimeout: 7000,
+    ),
+  );
+  trainProgramsRepository = NetworkTrainProgramsRepository(
+    dio: dio,
+  );
   AppConfig.instnace = AppConfig(
     isIOS: Platform.isIOS,
   );

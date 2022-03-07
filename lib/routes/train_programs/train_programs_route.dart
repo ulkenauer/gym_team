@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:gym_team/routes/menu/menu_screen.dart';
+import 'package:gym_team/routes/train_programs/train_programs_screen.dart';
 
-class MenuRoute extends MaterialPageRoute {
-  static const name = 'menu';
+class TrainProgramsRoute extends MaterialPageRoute {
+  static const name = 'train_programs';
 
-  MenuRoute({
+  TrainProgramsRoute({
     RouteSettings? settings,
     bool fullscreenDialog = false,
     bool maintainState = true,
@@ -13,7 +13,7 @@ class MenuRoute extends MaterialPageRoute {
           maintainState: maintainState,
           settings: settings,
           builder: (context) {
-            return const MenuScreen();
+            return const TrainProgramsScreen();
           },
         );
 }
