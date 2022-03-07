@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gym_team/app/app_colors.dart';
 import 'package:gym_team/app/app_routes.dart';
 import 'package:gym_team/data/repositories/network/network_train_programs_repository.dart';
 import 'package:gym_team/domain/bloc/train_program_list_cubit.dart';
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'GymTeam Test',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          // primarySwatch: Colors.deepPurple,
+          primarySwatch: Colors.deepPurple,
         ),
         initialRoute: 'home',
         onGenerateRoute: AppRoutes.onGenerateRoute,
