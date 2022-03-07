@@ -20,7 +20,10 @@ class AppTypography {
     color: AppColors.gray100,
     fontSize: 13,
     height: 22 / 13,
-    // letterSpacing: -0.41,
-    // fontWeight: FontWeight.w300,
+  );
+  static final TextStyle bodyCaption = TextStyle(
+    color: AppColors.gray100,
+    fontSize: 13,
+    height: 22 / 13,
   );
 }

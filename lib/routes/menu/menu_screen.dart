@@ -9,7 +9,7 @@ import 'package:gym_team/app/typography.dart';
 import 'package:gym_team/domain/bloc/train_program_list_cubit.dart';
 import 'package:gym_team/domain/bloc/train_program_list_state.dart';
 import 'package:gym_team/routes/hello/hello_route.dart';
-import 'package:gym_team/widgets/app_button.dart';
+import 'package:gym_team/widgets/app_error_widget.dart';
 import 'package:gym_team/widgets/app_loader.dart';
 import 'package:gym_team/widgets/gym_gradient_container.dart';
 import 'package:gym_team/widgets/train_program_list.dart';
@@ -59,6 +59,7 @@ class MenuScreen extends StatelessWidget {
           padding: EdgeInsetsDirectional.all(0),
           leading: CupertinoNavigationBarBackButton(
             color: Colors.white,
+            onPressed: () => Navigator.of(context).maybePop(),
           ),
         ),
         child: BlocBuilder<TrainProgramListCubit, TrainProgramListState>(
@@ -66,23 +67,10 @@ class MenuScreen extends StatelessWidget {
             if (state.displayError != null) {
               return GymGradientContainer(
                 child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        state.displayError!,
-                        style: AppTypography.trainProgramCardDescription,
-                      ),
-                      Container(
-                        height: AppSize.padding,
-                      ),
-                      AppButton(
-                        text: 'Попробовать снова',
-                        onPressed:
-                            BlocProvider.of<TrainProgramListCubit>(context)
-                                .loadList,
-                      )
-                    ],
+                  child: AppErrorWidget(
+                    errorText: state.displayError!,
+                    onRetry: BlocProvider.of<TrainProgramListCubit>(context)
+                        .loadList,
                   ),
                 ),
               );
@@ -128,22 +116,10 @@ class MenuScreen extends StatelessWidget {
           if (state.displayError != null) {
             return GymGradientContainer(
               child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      state.displayError!,
-                      style: AppTypography.trainProgramCardDescription,
-                    ),
-                    Container(
-                      height: AppSize.padding,
-                    ),
-                    AppButton(
-                      text: 'Попробовать снова',
-                      onPressed: BlocProvider.of<TrainProgramListCubit>(context)
-                          .loadList,
-                    )
-                  ],
+                child: AppErrorWidget(
+                  errorText: state.displayError!,
+                  onRetry:
+                      BlocProvider.of<TrainProgramListCubit>(context).loadList,
                 ),
               ),
             );

@@ -1,7 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gym_team/app/app_colors.dart';
 import 'package:gym_team/app/app_config.dart';
 import 'package:gym_team/app/app_routes.dart';
 import 'package:gym_team/data/repositories/network/network_train_programs_repository.dart';
@@ -13,7 +14,7 @@ late final NetworkTrainProgramsRepository trainProgramsRepository;
 void configureServices() {
   trainProgramsRepository = NetworkTrainProgramsRepository();
   AppConfig.instnace = AppConfig(
-    isIOS: true,
+    isIOS: Platform.isIOS,
   );
 }
 
