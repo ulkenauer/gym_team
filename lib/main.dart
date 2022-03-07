@@ -1,31 +1,12 @@
-import 'dart:io';
 
-import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gym_team/app/app_config.dart';
 import 'package:gym_team/app/app_routes.dart';
-import 'package:gym_team/data/repositories/network/network_train_programs_repository.dart';
+import 'package:gym_team/app/app_service_locator.dart';
 import 'package:gym_team/domain/bloc/train_program_list_cubit.dart';
 import 'package:gym_team/domain/bloc/train_program_list_state.dart';
-
-late final NetworkTrainProgramsRepository trainProgramsRepository;
-
-void configureServices() {
-  final dio = Dio(
-    BaseOptions(
-      connectTimeout: 15000,
-      receiveTimeout: 7000,
-    ),
-  );
-  trainProgramsRepository = NetworkTrainProgramsRepository(
-    dio: dio,
-  );
-  AppConfig.instnace = AppConfig(
-    isIOS: Platform.isIOS,
-  );
-}
+import 'package:gym_team/setup.dart';
 
 void main() {
   configureServices();
@@ -41,11 +22,11 @@ class MyApp extends StatelessWidget {
         BlocProvider<TrainProgramListCubit>(
           create: (BuildContext context) => TrainProgramListCubit(
             TrainProgramListState.initial(),
-            repository: trainProgramsRepository,
+            repository: AppServiceLocator.current.trainProgramsRepository,
           ),
         ),
       ],
-      child: AppConfig.instnace.isIOS
+      child: AppServiceLocator.current.appConfig.isIOS
           ? CupertinoApp(
               title: 'GymTeam Test',
               initialRoute: 'home',

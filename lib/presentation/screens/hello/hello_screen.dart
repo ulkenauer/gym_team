@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gym_team/app/app_colors.dart';
-import 'package:gym_team/app/app_config.dart';
+import 'package:gym_team/app/app_service_locator.dart';
 import 'package:gym_team/app/typography.dart';
 import 'package:gym_team/presentation/widgets/gym_gradient_container.dart';
 
@@ -11,7 +11,7 @@ class HelloScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (AppConfig.instnace.isIOS) {
+    if (AppServiceLocator.current.appConfig.isIOS) {
       return CupertinoPageScaffold(
           navigationBar: CupertinoNavigationBar(
             backgroundColor: AppColors.grad1,

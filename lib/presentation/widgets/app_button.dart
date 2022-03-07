@@ -1,9 +1,8 @@
-import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gym_team/app/app_colors.dart';
-import 'package:gym_team/app/app_config.dart';
+import 'package:gym_team/app/app_service_locator.dart';
 import 'package:gym_team/app/app_sizes.dart';
 
 class AppButton extends StatelessWidget {
@@ -32,7 +31,7 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     late final Widget button;
-    if (AppConfig.instnace.isIOS) {
+    if (AppServiceLocator.current.appConfig.isIOS) {
       button = CupertinoButton(
         onPressed: onPressed,
         borderRadius: const BorderRadius.all(Radius.circular(6.0)),
