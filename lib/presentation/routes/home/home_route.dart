@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gym_team/routes/home/home_screen.dart';
+import 'package:gym_team/presentation/screens/home/home_screen.dart';
 
 class HomeRoute extends MaterialPageRoute {
   static const name = 'home';

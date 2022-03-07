@@ -6,14 +6,12 @@ class AppTypography {
     color: AppColors.gray100,
     fontSize: 24,
     height: 22 / 16,
-    // letterSpacing: -0.41,
     fontWeight: FontWeight.w700,
   );
   static final TextStyle trainProgramCardTitle = TextStyle(
     color: AppColors.gray100,
     fontSize: 18,
     height: 22 / 16,
-    // letterSpacing: -0.41,
     fontWeight: FontWeight.w700,
   );
   static final TextStyle trainProgramCardDescription = TextStyle(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gym_team/routes/hello/hello_route.dart';
-import 'package:gym_team/routes/home/home_route.dart';
-import 'package:gym_team/routes/train_programs/train_programs_route.dart';
+import 'package:gym_team/presentation/routes/hello/hello_route.dart';
+import 'package:gym_team/presentation/routes/home/home_route.dart';
+import 'package:gym_team/presentation/routes/train_programs/train_programs_route.dart';
 
 class AppRoutes {
   static final _namedRoutes = <String, RouteFactory>{

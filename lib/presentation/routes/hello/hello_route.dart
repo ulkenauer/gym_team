@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gym_team/routes/hello/hello_screen.dart';
+import 'package:gym_team/presentation/screens/hello/hello_screen.dart';
 
 class HelloRoute extends MaterialPageRoute {
   static const name = 'hello';

@@ -7,11 +7,11 @@ import 'package:gym_team/app/app_sizes.dart';
 import 'package:gym_team/app/typography.dart';
 import 'package:gym_team/domain/bloc/train_program_list_cubit.dart';
 import 'package:gym_team/domain/bloc/train_program_list_state.dart';
-import 'package:gym_team/routes/hello/hello_route.dart';
-import 'package:gym_team/widgets/app_error_widget.dart';
-import 'package:gym_team/widgets/app_loader.dart';
-import 'package:gym_team/widgets/gym_gradient_container.dart';
-import 'package:gym_team/widgets/train_program_list.dart';
+import 'package:gym_team/presentation/routes/hello/hello_route.dart';
+import 'package:gym_team/presentation/widgets/app_error_widget.dart';
+import 'package:gym_team/presentation/widgets/app_loader.dart';
+import 'package:gym_team/presentation/widgets/gym_gradient_container.dart';
+import 'package:gym_team/presentation/widgets/train_programs/train_program_list.dart';
 
 class MaterialTrainProgramsScreen extends StatelessWidget {
   const MaterialTrainProgramsScreen({Key? key}) : super(key: key);
@@ -22,21 +22,17 @@ class MaterialTrainProgramsScreen extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: AppSize.padding),
         child: ConstrainedBox(
-          constraints: BoxConstraints(
-            minHeight: MediaQuery.of(context).size.height
-          ),
+          constraints:
+              BoxConstraints(minHeight: MediaQuery.of(context).size.height),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: AppSize.padding,
-              ),
-              Text(
-                'Каталог фитнес-программ',
-                style: AppTypography.trainProgramListTitle,
-              ),
-              Container(
-                height: AppSize.padding,
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: AppSize.padding),
+                child: Text(
+                  'Каталог фитнес-программ',
+                  style: AppTypography.trainProgramListTitle,
+                ),
               ),
               TrainProgramList(
                 listItems: state.trainProgramsList!,

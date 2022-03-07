@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gym_team/routes/train_programs/train_programs_screen.dart';
+import 'package:gym_team/presentation/screens/train_programs/train_programs_screen.dart';
 
 class TrainProgramsRoute extends MaterialPageRoute {
   static const name = 'train_programs';

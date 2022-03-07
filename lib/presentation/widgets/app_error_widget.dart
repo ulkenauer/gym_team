@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:gym_team/app/app_sizes.dart';
 import 'package:gym_team/app/typography.dart';
-import 'package:gym_team/widgets/app_button.dart';
+import 'package:gym_team/presentation/widgets/app_button.dart';
 
 class AppErrorWidget extends StatelessWidget {
   final void Function() onRetry;

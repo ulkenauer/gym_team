@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:gym_team/app/app_colors.dart';
 import 'package:gym_team/app/app_config.dart';
 import 'package:gym_team/app/typography.dart';
-import 'package:gym_team/widgets/gym_gradient_container.dart';
+import 'package:gym_team/presentation/widgets/gym_gradient_container.dart';
 
 class HelloScreen extends StatelessWidget {
   const HelloScreen({Key? key}) : super(key: key);

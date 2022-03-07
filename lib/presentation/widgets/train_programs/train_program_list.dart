@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:gym_team/app/app_sizes.dart';
 import 'package:gym_team/domain/entities/train_program_brief_entity.dart';
-import 'package:gym_team/widgets/train_program_card.dart';
+import 'package:gym_team/presentation/widgets/train_programs/train_program_card.dart';
 
 class TrainProgramList extends StatelessWidget {
   final List<TrainProgramBriefEntity> listItems;
